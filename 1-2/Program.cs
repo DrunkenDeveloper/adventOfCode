@@ -1,5 +1,4 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 
 Console.WriteLine("Advent of Code 1-2");
@@ -22,18 +21,6 @@ var numberStringToNumberAsString = new Dictionary<string, string> {
 var lines = File.ReadLines("input1-2.txt");
 Console.WriteLine(lines.Select(l => (numberOrNumberString.Matches(l), numberOrNumberStringRightToLeft.Matches(l))).
 Select(mct => string.Join(string.Empty, [GetNumberString(mct.Item1[0].Value), GetNumberString(mct.Item2[0].Value)])).Select(c => int.Parse(c)).Sum());
-
-
-
-// foreach(var l in lines)
-
-
-// {
-//     var mct = (numberOrNumberString.Matches(l), numberOrNumberStringRightToLeft.Matches(l));
-//     Console.WriteLine(l +" ** "+ string.Join("--", [mct.Item1[0].Index, GetNumberString(mct.Item1[0].Value), mct.Item1[0].Value, 
-//     mct.Item2[0].Index, GetNumberString(mct.Item2[0].Value), mct.Item2[0].Value]));
-// }
-
 
 
 static string GetNumberString(string numberOrNumberString)
